@@ -1,0 +1,25 @@
+{
+    "nombreApp" : "Componentes",
+    "rutas" : [
+        {
+            "name" : "fabrizzio",
+            "profesion": "informatico",
+            "icon" : "add_alert"
+        },
+        {
+            "name" : "felipe",
+            "profesion": "informatico",
+            "icon" : "accessibility"
+        },
+        {
+            "name" : "veronica",
+            "profesion" : "administradora",
+            "icon": "folder_open"
+        },
+	{
+            "name" : "Diane",
+            "profesion" : "pedicurista",
+            "icon": "folder_open"	
+	}
+    ]
+}
