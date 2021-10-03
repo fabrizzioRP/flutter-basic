@@ -1,16 +1,6 @@
-import 'package:componentes_app/src/pages/alert_page.dart';
-import 'package:componentes_app/src/pages/animated_container.dart';
-import 'package:componentes_app/src/pages/avatar_page.dart';
-import 'package:componentes_app/src/pages/card_page.dart';
-import 'package:componentes_app/src/pages/card_swiper.dart';
-import 'package:componentes_app/src/pages/home_page.dart';
-import 'package:componentes_app/src/pages/input_page.dart';
-import 'package:componentes_app/src/pages/listview_2.dart';
-import 'package:componentes_app/src/pages/listview_builder_page.dart';
-import 'package:componentes_app/src/pages/settings.dart';
-import 'package:componentes_app/src/pages/slider_page.dart';
-import 'package:componentes_app/src/pages/sliver_page.dart';
 import 'package:flutter/material.dart';
+//
+import 'package:componentes_app/src/pages/pages.dart';
 
 Map<String, WidgetBuilder> getRoutes() {
   return <String, WidgetBuilder>{
@@ -25,6 +15,7 @@ Map<String, WidgetBuilder> getRoutes() {
     'list2': (BuildContext context) => ListPage2(),
     SettingsPage.settingsPage: (_) => SettingsPage(),
     CardSwiperPage.nameSwiper: (_) => CardSwiperPage(),
-    SliverPage.nameSliver: (_) => SliverPage()
+    SliverPage.nameSliver: (_) => SliverPage(),
+    'animated': (_) => AnimatedWidgetPage(),
   };
 }

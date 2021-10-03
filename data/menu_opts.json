@@ -45,6 +45,11 @@
             "ruta" : "sliver",
             "icon" : "smart_toy",
             "texto": "Sliver AppBar"
+        },
+        {
+            "ruta" : "animated",
+            "icon" : "widgets",
+            "texto": "Animated Widget"
         }
     ]
 }

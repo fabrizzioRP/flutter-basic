@@ -1,0 +1,13 @@
+export 'package:componentes_app/src/pages/alert_page.dart';
+export 'package:componentes_app/src/pages/animated_container.dart';
+export 'package:componentes_app/src/pages/animated_widget_page.dart';
+export 'package:componentes_app/src/pages/avatar_page.dart';
+export 'package:componentes_app/src/pages/card_page.dart';
+export 'package:componentes_app/src/pages/card_swiper.dart';
+export 'package:componentes_app/src/pages/home_page.dart';
+export 'package:componentes_app/src/pages/input_page.dart';
+export 'package:componentes_app/src/pages/listview_2.dart';
+export 'package:componentes_app/src/pages/listview_builder_page.dart';
+export 'package:componentes_app/src/pages/settings.dart';
+export 'package:componentes_app/src/pages/slider_page.dart';
+export 'package:componentes_app/src/pages/sliver_page.dart';
