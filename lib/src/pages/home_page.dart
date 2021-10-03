@@ -9,7 +9,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Componentes', style: TextStyle(color: Colors.black)),
+        elevation: 0,
+        title: Text('Flutter Widget', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.amberAccent,
         centerTitle: true,
         actions: <Widget>[
@@ -34,6 +35,7 @@ class HomePage extends StatelessWidget {
       initialData: [],
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
         return ListView(
+          physics: BouncingScrollPhysics(),
           children: _listItems(snapshot.data!, context),
         );
       },
@@ -47,7 +49,7 @@ class HomePage extends StatelessWidget {
       final widgetTemp = ListTile(
         title: Text(opt['texto']),
         leading: getIcon(opt['icon']),
-        trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
+        trailing: Icon(Icons.keyboard_arrow_right, color: Colors.red),
         onTap: () {
           Navigator.pushNamed(context, opt['ruta']);
           //final route = MaterialPageRoute(builder: (context) => AlertPage());
