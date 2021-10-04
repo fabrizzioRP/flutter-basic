@@ -50,6 +50,11 @@
             "ruta" : "animated",
             "icon" : "widgets",
             "texto": "Animated Widget"
+        },
+        {
+            "ruta" : "animatedSquare",
+            "icon" : "crop_square",
+            "texto": "Animated Square"
         }
     ]
 }
