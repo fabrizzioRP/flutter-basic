@@ -18,7 +18,9 @@ class SlidesImagePage extends StatelessWidget {
         tooltip: 'Home',
         backgroundColor: Colors.pink,
         child: Icon(Icons.home),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
       ),
     );
   }
