@@ -2,22 +2,22 @@
     "nombreApp" : "Componentes",
     "rutas" : [
         {
-            "name" : "fabrizzio",
+            "name" : "Juan",
             "profesion": "informatico",
             "icon" : "add_alert"
         },
         {
-            "name" : "felipe",
+            "name" : "Dereck",
             "profesion": "informatico",
             "icon" : "accessibility"
         },
         {
-            "name" : "veronica",
+            "name" : "Isac",
             "profesion" : "administradora",
             "icon": "folder_open"
         },
 	{
-            "name" : "Diane",
+            "name" : "Jesus",
             "profesion" : "pedicurista",
             "icon": "folder_open"	
 	}
