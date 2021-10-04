@@ -11,7 +11,8 @@ final _icons = <String, IconData>{
   'swipe': Icons.swipe,
   'smart_toy': Icons.smart_toy,
   'widgets': Icons.widgets,
-  'crop_square': Icons.crop_square
+  'crop_square': Icons.crop_square,
+  'view_carousel': Icons.view_carousel
 };
 
 Icon getIcon(String nombreIcono) {

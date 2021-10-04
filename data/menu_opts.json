@@ -55,6 +55,11 @@
             "ruta" : "animatedSquare",
             "icon" : "crop_square",
             "texto": "Animated Square"
+        },
+        {
+            "ruta" : "SlidesImage",
+            "icon" : "view_carousel",
+            "texto": "Slides Image"
         }
     ]
 }

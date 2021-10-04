@@ -18,5 +18,6 @@ Map<String, WidgetBuilder> getRoutes() {
     SliverPage.nameSliver: (_) => SliverPage(),
     'animated': (_) => AnimatedWidgetPage(),
     'animatedSquare': (_) => SquareAnimatedPage(),
+    'SlidesImage': (_) => SlidesImagePage(),
   };
 }
