@@ -19,5 +19,6 @@ Map<String, WidgetBuilder> getRoutes() {
     'animated': (_) => AnimatedWidgetPage(),
     'animatedSquare': (_) => SquareAnimatedPage(),
     'SlidesImage': (_) => SlidesImagePage(),
+    'PinterestUI': (_) => PinterestUIScreen(),
   };
 }

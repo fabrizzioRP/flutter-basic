@@ -13,3 +13,4 @@ export 'package:componentes_app/src/pages/slider_page.dart';
 export 'package:componentes_app/src/pages/sliver_page.dart';
 export 'package:componentes_app/src/pages/square_animated_page.dart';
 export 'package:componentes_app/src/pages/slides_img_page.dart';
+export 'package:componentes_app/src/pages/pinterestUI_screen.dart';

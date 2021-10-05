@@ -60,6 +60,11 @@
             "ruta" : "SlidesImage",
             "icon" : "view_carousel",
             "texto": "Slides Image"
+        },
+        {
+            "ruta" : "PinterestUI",
+            "icon" : "mobile_screen_share",
+            "texto": "Pinterest UI"
         }
     ]
 }
