@@ -11,6 +11,7 @@ import 'package:componentes_app/src/pages/alert_page.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.dark,
   ));
   //Provider.debugCheckInvalidValueType = null;
   runApp(AppState());

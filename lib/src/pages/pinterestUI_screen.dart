@@ -9,6 +9,23 @@ class PinterestUIScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appBar2 = AppBar(
+      leading: Padding(
+        padding: EdgeInsets.all(7.0),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(100),
+            child: FadeInImage(
+              fit: BoxFit.cover,
+              placeholder: AssetImage('assets/jar-loading.gif'),
+              image: NetworkImage(
+                  'http://assets.stickpng.com/images/58e9199beb97430e819064fc.png'),
+            ),
+          ),
+        ),
+      ),
       backgroundColor: Colors.white,
       elevation: 1,
       title: Text(
@@ -37,6 +54,7 @@ class PinterestUIScreen extends StatelessWidget {
       create: (_) => SlidesImgProvider(),
       child: Scaffold(
         appBar: appBar2,
+        backgroundColor: Colors.grey.shade100,
         body: Stack(
           children: [
             // Grid :
@@ -50,13 +68,71 @@ class PinterestUIScreen extends StatelessWidget {
   }
 }
 
+const List ITEMS = [
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+  {
+    'image': "https://assets.swappie.com/SwappieiPhoneSE2020128Red.jpg",
+    'nombre': 'iphone XR',
+    'precio': "100.0"
+  },
+];
+
 class _PinterestGrid extends StatefulWidget {
   @override
   __PinterestGridState createState() => __PinterestGridState();
 }
 
 class __PinterestGridState extends State<_PinterestGrid> {
-  final List<int> items = List.generate(100, (index) => index);
+  //final List<int> items = List.generate(100, (index) => index);
 
   ScrollController controller = ScrollController();
   double scrollAnterior = 0;
@@ -92,9 +168,10 @@ class __PinterestGridState extends State<_PinterestGrid> {
       controller: controller,
       physics: BouncingScrollPhysics(),
       crossAxisCount: 4,
-      itemCount: items.length,
-      itemBuilder: (_, i) => _PinterestItems(i),
-      staggeredTileBuilder: (i) => StaggeredTile.count(2, i.isEven ? 2 : 3),
+      itemCount: ITEMS.length,
+      itemBuilder: (_, i) => _PinterestItems(
+          ITEMS[i]['image'], ITEMS[i]['nombre'], ITEMS[i]['precio']),
+      staggeredTileBuilder: (i) => StaggeredTile.count(2, i.isEven ? 3.5 : 2.5),
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
     );
@@ -102,25 +179,67 @@ class __PinterestGridState extends State<_PinterestGrid> {
 }
 
 class _PinterestItems extends StatelessWidget {
-  final int index;
-  const _PinterestItems(this.index);
+  final String image;
+  final String nombre;
+  final String precio;
+  const _PinterestItems(this.image, this.nombre, this.precio);
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.only(top: 10),
       child: Container(
-        margin: EdgeInsets.all(5),
+        margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.red,
+          color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(30)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 10.0,
+              spreadRadius: -5,
+            ),
+          ],
         ),
-        // aca cambiar el contenido para poner imagenes :
-        child: Center(
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Text('$index'),
-          ),
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                width: size.width,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30)),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                  child: FadeInImage(
+                    placeholder: AssetImage('assets/jar-loading.gif'),
+                    image: NetworkImage('${this.image}'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 5),
+            Text(
+              '${this.nombre}',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.italic),
+            ),
+            Text(
+              '\$ ${this.precio}',
+              style: TextStyle(fontSize: 15),
+            ),
+            SizedBox(height: 5),
+          ],
         ),
       ),
     );
