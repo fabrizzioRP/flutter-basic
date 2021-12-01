@@ -55,40 +55,40 @@ class _ListPage2State extends State<ListPage2> {
     );
   }
 
-  Widget _crearList() {
-    return RefreshIndicator(
-      onRefresh: _obtenerPageNew,
-      child: ListView.builder(
-        controller: _scrollController,
-        itemCount: _list.length,
-        itemBuilder: (BuildContext context, int i) {
-          final int cont = _list[i];
-          return FadeInImage(
-            image: NetworkImage('https://picsum.photos/500/300?random=$cont'),
-            placeholder: AssetImage('assets/jar-loading.gif'),
-          );
-        },
-      ),
-    );
-  }
+  Widget _crearList() => RefreshIndicator(
+        onRefresh: _obtenerPageNew,
+        child: ListView.builder(
+          controller: _scrollController,
+          itemCount: _list.length,
+          itemBuilder: (_, i) {
+            final int cont = _list[i];
+            return FadeInImage(
+              image: NetworkImage('https://picsum.photos/500/300?random=$cont'),
+              placeholder: AssetImage('assets/jar-loading.gif'),
+            );
+          },
+        ),
+      );
 
   void _agregar10() {
     for (var i = 1; i < 10; i++) {
       _endItem++;
       _list.add(_endItem);
-
       setState(() {});
     }
   }
 
   Future _obtenerPageNew() async {
-    final duration = Duration(seconds: 2);
-    Timer(duration, () {
+    // final duration = Duration(seconds: 2);
+    // Timer(duration, () {
+    //   _list.clear();
+    //   _endItem++;
+    //   _agregar10();
+    // });
+    return Future.delayed(Duration(seconds: 2), () {
       _list.clear();
       _endItem++;
       _agregar10();
     });
-
-    return Future.delayed(duration);
   }
 }

@@ -24,26 +24,26 @@ class HomePageTemp extends StatelessWidget {
   }
 
   // First mode do : ListView
-  List<Widget> _crearItems() {
-    List<Widget> lista = [];
+  // List<Widget> _crearItems() {
+  //   List<Widget> lista = [];
 
-    for (String opt in opciones) {
-      final tempWidget = ListTile(
-        title: Text(opt),
-      );
+  //   for (String opt in opciones) {
+  //     final tempWidget = ListTile(
+  //       title: Text(opt),
+  //     );
 
-      lista
-        ..add(tempWidget)
-        ..add(Divider(
-            color: Colors.amberAccent,
-            height: 15.0,
-            endIndent: 10.0,
-            indent: 10.0,
-            thickness: 1.5));
-    }
+  //     lista
+  //       ..add(tempWidget)
+  //       ..add(Divider(
+  //           color: Colors.amberAccent,
+  //           height: 15.0,
+  //           endIndent: 10.0,
+  //           indent: 10.0,
+  //           thickness: 1.5));
+  //   }
 
-    return lista;
-  }
+  //   return lista;
+  // }
 
   // second mode do : ListView
 

@@ -7,7 +7,7 @@ class CardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cards Page', style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.red,
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),

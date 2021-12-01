@@ -10,10 +10,8 @@ class ListaPage extends StatefulWidget {
 }
 
 class _ListviewBuilderPageState extends State<ListaPage> {
-  // nos sirve para controlar nuetro SCROLL
   ScrollController _scrollController = ScrollController();
 
-  // creamos nuestra lista
   List<int> _listaNumeros = [];
   int _ultimoItem = 0;
   // nuestra variable para saber si se esta cargando nuestra peticion
@@ -39,6 +37,7 @@ class _ListviewBuilderPageState extends State<ListaPage> {
   void dispose() {
     super.dispose();
     _scrollController.dispose();
+    _scrollController.removeListener(() {});
   }
 
   @override
@@ -82,7 +81,7 @@ class _ListviewBuilderPageState extends State<ListaPage> {
       child: ListView.builder(
         controller: _scrollController,
         itemCount: _listaNumeros.length,
-        itemBuilder: (BuildContext context, int i) {
+        itemBuilder: (_, i) {
           final int image = _listaNumeros[i];
           return FadeInImage(
             image: NetworkImage('https://picsum.photos/500/300?random=$image'),
@@ -94,14 +93,18 @@ class _ListviewBuilderPageState extends State<ListaPage> {
   }
 
   Future obtenerPagina1() async {
-    final duration = Duration(seconds: 2);
-    new Timer(duration, () {
+    // final duration = Duration(seconds: 2);
+    // new Timer(duration, () {
+    //   _listaNumeros.clear();
+    //   _ultimoItem++;
+    //   _agrega10();
+    // });
+
+    return Future.delayed(Duration(seconds: 2), () {
       _listaNumeros.clear();
       _ultimoItem++;
       _agrega10();
     });
-
-    return Future.delayed(duration);
   }
 
   // Creamos los items que mostraremos
@@ -119,8 +122,7 @@ class _ListviewBuilderPageState extends State<ListaPage> {
     _isLoading = true;
     setState(() {});
 
-    final duration = Duration(seconds: 2);
-    return Timer(duration, respuestaHTTP);
+    return Timer(Duration(seconds: 2), respuestaHTTP);
   }
 
   // obtenemos nuestra respuesta que dura 2 segundos y agregamos 10 imagenes mas.

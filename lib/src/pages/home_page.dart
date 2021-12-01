@@ -1,8 +1,8 @@
-import 'package:componentes_app/src/pages/settings.dart';
 import 'package:flutter/material.dart';
 
-import 'package:componentes_app/src/providers/menu_provider.dart';
+import 'package:componentes_app/src/pages/settings.dart';
 import 'package:componentes_app/src/utils/icono_string_util.dart';
+import 'package:componentes_app/src/providers/menu_provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         title: Text('Flutter Widget', style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.red,
         centerTitle: true,
         actions: <Widget>[
           IconButton(
